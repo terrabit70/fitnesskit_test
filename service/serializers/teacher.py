@@ -4,7 +4,7 @@ from service.models import Teacher
 
 
 class TeacherSerializer(serializers.ModelSerializer):
-    imageUrl = serializers.SerializerMethodField()
+    #imageUrl = serializers.SerializerMethodField()
 
  #   def get_imageUrl(self, instance):
  #       return f'http://{settings.TUNNEL_HOST}{settings.MEDIA_URL}{instance.image}'
