@@ -28,7 +28,7 @@ SECRET_KEY = 'o(%1+!@94w6n)qa^qzi82kc6bobhump92@95j)z53wgvrn)3)#'
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fitnesskittest.herokuapp.com']
 
 
 # Application definition
@@ -141,11 +141,8 @@ if os.getcwd() == '/app':
         'default': dj_database_url.config(default='postgres://localhost')
     }
 
+    # 'X-Forwarded-Proto' header support for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    ALLOWED_HOSTS = ['fitnesskittest.herokuapp.com']
-
-    DEBUG = False
 
     # Static resources configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
