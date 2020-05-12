@@ -1,2 +1,0 @@
-secret_key: # django secret key
-tunnel_host: # url of tunnel, example ffcd955e.ngrok.io
