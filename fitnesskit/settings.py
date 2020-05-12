@@ -28,7 +28,7 @@ SECRET_KEY = 'o(%1+!@94w6n)qa^qzi82kc6bobhump92@95j)z53wgvrn)3)#'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['frozen-falls-39858.herokuapp.com']
+ALLOWED_HOSTS = ['fitnesskittest.herokuapp.com']
 
 
 # Application definition
@@ -143,9 +143,6 @@ if os.getcwd() == '/app':
 
     # 'X-Forwarded-Proto' header support for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    # All host headers enabled
-    ALLOWED_HOSTS = ['frozen-falls-39858.herokuapp.com']
 
     # Static resources configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
