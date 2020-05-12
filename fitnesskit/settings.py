@@ -31,7 +31,7 @@ SECRET_KEY = config.get('secret_key')
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 if TUNNEL_HOST:
     ALLOWED_HOSTS.append(TUNNEL_HOST)
 
@@ -138,3 +138,23 @@ REST_FRAMEWORK = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Heroku settings
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+    }
+
+    # 'X-Forwarded-Proto' header support for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # All host headers enabled
+    ALLOWED_HOSTS = ['*']
+
+    # Static resources configuration
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = 'staticfiles'
+    STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    )
