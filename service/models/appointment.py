@@ -27,4 +27,4 @@ class Appointment(models.Model):
     teacher = models.ForeignKey('Teacher', on_delete=models.SET_NULL,  blank=False, null=True)
 
     def __str__(self):
-        return f'{Service.name()} : {self.weekday}'
+        return f'{self.service} : {self.weekday}'
