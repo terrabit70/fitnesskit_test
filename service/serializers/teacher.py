@@ -16,5 +16,5 @@ class TeacherSerializer(serializers.ModelSerializer):
             'short_name',
             'name',
             'position',
- #           'imageUrl'
+            'imageUrl'
         ]
