@@ -24,3 +24,6 @@ class Appointment(models.Model):
     place = models.ForeignKey('Place', on_delete=models.SET_NULL,  blank=False, null=True)
     service = models.ForeignKey('Service', on_delete=models.SET_NULL,  blank=False, null=True)
     teacher = models.ForeignKey('Teacher', on_delete=models.SET_NULL,  blank=False, null=True)
+
+    def __str__(self):
+        return f'{self.appointment} : {self.weekday}'
