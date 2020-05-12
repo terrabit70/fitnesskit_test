@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from .service import Service
 
 
 class Appointment(models.Model):
@@ -26,4 +27,4 @@ class Appointment(models.Model):
     teacher = models.ForeignKey('Teacher', on_delete=models.SET_NULL,  blank=False, null=True)
 
     def __str__(self):
-        return f'{self.appointment} : {self.weekday}'
+        return f'{Service.name} : {self.weekday.choices}'
