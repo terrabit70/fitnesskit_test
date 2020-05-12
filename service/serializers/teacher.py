@@ -9,7 +9,7 @@ class TeacherSerializer(serializers.ModelSerializer):
 
     def get_imageUrl(self, instance):
         if not f'{instance.image}':
-            return 'qweqweqwe'
+            return 'no image'
         else:
             return f'http://{socket.gethostbyname(socket.gethostname())}{settings.MEDIA_URL}{instance.image}'
 
