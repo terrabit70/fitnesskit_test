@@ -15,7 +15,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
     teacher_v2 = TeacherSerializer(source='teacher')
 
     class Meta:
-        model = Appointment  #TODO wtf
+        model = Appointment
         fields = [
             'name',
             'description',
